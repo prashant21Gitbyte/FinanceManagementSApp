@@ -1,0 +1,33 @@
+{
+    "leftItems": [
+      { "type": "menu", "icon": "person-circle-outline", "alignment": "left" , "drawerOptions": [
+        {"label": "Home", "screen": "Home", "icon": "home"},
+        {"label": "Settings", "screen": "Settings", "icon": "settings"},
+        {"label": "Backup and Restore", "screen": "BackupRestore", "icon": "cloud-upload"},
+        {"label": "Help", "screen": "Help", "icon":"help-outline"},
+        {"label": "Logout", "screen": "Logout", "icon":"exit"}
+      ]},
+      { "type": "title", "text": "My Account", "alignment": "left", "modalOptions": [
+        { "label": "Account 1", "screen": "AccountScreen1" },
+        { "label": "Account 2", "screen": "AccountScreen2" }
+      ] }
+    ],
+    "rightItems": [
+      
+
+      { "type": "menu", "icon": "menu", "alignment": "right", "drawerOptions": [
+        { "label": "Account Summary", "screen": "AccountSummary", "icon":"stats-chart" },
+        { "label": "Summary", "screen": "Summary" , "icon":"stats-chart" },
+        { "label": "Category", "screen": "CategoryAdd", "icon":"shapes"  },
+        { "label": "Category chart", "screen": "CategoryChart", "icon":"pie-chart-sharp"  },
+        { "label": "Budget", "screen": "Budget" , "icon":"newspaper" },
+        { "label": "Payment Method", "screen": "PaymentMethod", "icon":"albums"  },
+        { "label": "Payment Method Chart", "screen": "PaymentMethodChart", "icon":"stats-chart"  },
+        { "label": "Transaction-All Accounts", "screen": "TransactionsAllAccounts" , "icon":"list" },
+        { "label": "Reminders", "screen": "Reminders" , "icon":"notifications" },
+        { "label": "Account", "screen": "Account" , "icon":"person-circle" },
+        { "label": "How to use the app", "screen": "Help" , "icon":"help-outline" }
+      ] }
+    ]
+  }
+  

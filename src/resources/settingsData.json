@@ -1,0 +1,80 @@
+[
+    { 
+      "id": "1",
+      "type": "toggle",
+      "label": "Format Date"
+    },
+    {
+      "id": "2",
+      "type": "modal",
+      "label": "Time Format"
+    },
+    {
+      "id": "3",
+      "type": "modal",
+      "label": "Currency Format"
+    },
+    {
+      "id": "4",
+      "type": "toggle",
+      "label": "Fingerprint Password"
+    },
+    {
+      "id": "5",
+      "type": "toggle",
+      "label": "Password Settings"
+    },
+    {
+      "id": "6",
+      "type": "modal",
+      "label": "Language"
+    },
+    {
+      "id": "7",
+      "type": "toggle",
+      "label": "Dark Mode"
+    },
+    {
+      "id": "8",
+      "type": "toggle",
+      "label": "Previous Balance"
+    },
+    {
+      "id": "9",
+      "type": "toggle",
+      "label": "Show time in reports"
+    },
+    {
+      "id": "10",
+      "type": "modal",
+      "label": "Set first day of year"
+    },
+    {
+      "id": "11",
+      "type": "modal",
+      "label": "set first day of month"
+    },
+    {
+      "id": "12",
+      "type": "modal",
+      "label": "set first day of week"
+    }
+    ,
+    {
+      "id": "13",
+      "type": "modal",
+      "label": "Set default period All"
+    }
+    ,
+    {
+      "id": "14",
+      "type": "modal",
+      "label": "Delete Data"
+    },
+    {
+        "id": "15",
+        "type": "modal",
+        "label": "Privacy Policy"
+      }
+  ]
+  

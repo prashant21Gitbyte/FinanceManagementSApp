@@ -1,0 +1,33 @@
+// SomeComponent.js
+import React from 'react';
+import { View, Text, Button } from 'react-native';
+import { useToken } from './TokenContext'; // Adjust the path accordingly
+
+const SomeComponent = () => {
+  const { token, saveToken, removeToken } = useToken();
+
+  const handleLogin = async () => {
+    // Mock login and token save
+    const newToken = 'mock-access-token';
+    await saveToken(newToken);
+  };
+
+  const handleLogout = async () => {
+    await removeToken();
+  };
+
+  return (
+    <View>
+      {token ? (
+        <>
+          <Text>Token: {token}</Text>
+          <Button title="Logout" onPress={handleLogout} />
+        </>
+      ) : (
+        <Button title="Login" onPress={handleLogin} />
+      )}
+    </View>
+  );
+};
+
+export default SomeComponent;
