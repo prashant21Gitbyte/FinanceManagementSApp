@@ -3,37 +3,24 @@ import {View, Text, StyleSheet, Image, Button} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import IOcon from 'react-native-vector-icons/Ionicons';
 import AIcon from 'react-native-vector-icons/FontAwesome';
-import { Touchable } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {Touchable} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 //import { useNavigation } from '@react-navigation/native';
 
-
-
-
-const ExpenseDetail = ({data, onPressBackFromDetails}) => {
+const ExpenseDetail = ({data}) => {
   //const navigation = useNavigation()
 
-  console.log(data)
+  console.log(data);
 
-  
-
-  
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={onPressBackFromDetails}>
-      <IOcon name="arrow-back-outline" size={30} color="black"/>
-      </TouchableOpacity>
-      
       <View style={styles.header}>
-
-        
         <Icon name="person" size={40} color="black" style={styles.icon} />
         <Text style={styles.title}>{data?.recipient}</Text>
         <Text style={styles.date}>• {data?.date}</Text>
       </View>
 
-      
-        <View style={styles.detailContainer}>
+      <View style={styles.detailContainer}>
         <View style={styles.borderObj}>
           <View style={styles.detailRow}>
             <Text style={styles.label}>Status</Text>
@@ -41,52 +28,49 @@ const ExpenseDetail = ({data, onPressBackFromDetails}) => {
           </View>
 
           <View style={styles.detailRow}>
-            <Text style={styles.label}>Category</Text>
-            <Text style={styles.value}>{data.category}</Text>
+            <Text style={styles.label}>Subject</Text>
+            <Text style={styles.value}>{data.subject}</Text>
           </View>
 
           <View style={styles.detailRow}>
-            <Text style={styles.label}>Remark</Text>
-            <Text style={styles.value}>{data?.remark}</Text>
+            <Text style={styles.label}>Description</Text>
+            <Text style={styles.value}>{data?.description}</Text>
           </View>
         </View>
 
-
         <View style={styles.borderObj}>
-        <View style={styles.detailRow}>
-          <Text style={styles.label}>Payment</Text>
-          <Text style={styles.value}>{data.modeOfPayment}</Text>
-        </View>
+          <View style={styles.detailRow}>
+            <Text style={styles.label}>Payment</Text>
+            <Text style={styles.value}>{data.modeOfPayment}</Text>
+          </View>
 
-        <View style={styles.detailRow}>
-          <Text style={styles.label}>Amount</Text>
-          <Text style={styles.value}>₹{data.amount}</Text>
-        </View>
+          <View style={styles.detailRow}>
+            <Text style={styles.label}>Amount</Text>
+            <Text style={styles.value}>₹{data.amount}</Text>
+          </View>
 
-        <View style={styles.detailRow}>
-          <Text style={styles.label}>Date</Text>
-          <Text style={styles.value}>{data.date}</Text>
-        </View>
+          <View style={styles.detailRow}>
+            <Text style={styles.label}>Date</Text>
+            <Text style={styles.value}>{data.date}</Text>
+          </View>
         </View>
       </View>
 
-    
       <View style={styles.buttonContainer}>
-        <TouchableOpacity >
-        <IOcon name="pencil-sharp" size={26} color="white" style={[styles.icon, styles.iconAbsolute]} />
-
+        <TouchableOpacity>
+          <IOcon
+            name="pencil-sharp"
+            size={26}
+            color="white"
+            style={[styles.icon, styles.iconAbsolute]}
+          />
         </TouchableOpacity>
-      {/*
+        {/*
       <Button title="Edit Expense" onPress={() => {}} ></Button>
       */}
-        
-        
       </View>
-      
     </View>
-    
   );
-  
 };
 
 const styles = StyleSheet.create({
@@ -95,13 +79,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: '#ddd',
     padding: 20,
-    marginTop: 20
+    marginTop: 20,
   },
   container: {
     flex: 1,
     padding: 16,
     backgroundColor: '#fff',
-    paddingTop: 35
+    paddingTop: 35,
   },
   header: {
     alignItems: 'center',
@@ -133,6 +117,7 @@ const styles = StyleSheet.create({
   },
   value: {
     color: '#000',
+    maxWidth: 200,
   },
   valueCompleted: {
     color: 'green',
@@ -142,7 +127,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: 16,
-    
+
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
@@ -150,8 +135,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
     backgroundColor: 'red',
-    
-    
   },
   iconAbsolute: {
     bottom: 40,
@@ -160,8 +143,7 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 50,
     position: 'absolute',
-    
-  }
+  },
 });
 
 export default ExpenseDetail;

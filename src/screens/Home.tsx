@@ -141,13 +141,67 @@ const App = ({onPressTransactions, onPressTransfer}) => {
   return (
     <View style={styles.container}>
       <ScrollView>
+        <View
+          style={{
+            backgroundColor: '#292D32',
+            elevation: 2,
+            //height: 190,
+            //width: '100%',
+            margin: 7,
+            padding: 20,
+            paddingHorizontal: 25,
+
+            borderRadius: 30,
+          }}>
+          <Text style={{fontWeight: 'bold', color: 'white'}}>Hi, There!</Text>
+          <View
+            style={
+              {
+                //backgroundColor: 'red',
+                // justifyContent: 'center',
+                // alignItems: 'center',
+              }
+            }>
+            <Text style={{color: 'white', fontSize: 50, fontWeight: 'bold'}}>
+              ₹4,00,000
+            </Text>
+            <Text style={{color: 'white', fontSize: 15, fontWeight: 'bold'}}>
+              Current Balance
+            </Text>
+
+            <View style={{flexDirection: 'row', gap: 20, marginVertical: 20}}>
+              <View>
+                <Text
+                  style={{color: '#4CAF50', fontSize: 20, fontWeight: 'bold'}}>
+                  ₹10,00,000
+                </Text>
+                <Text
+                  style={{color: 'white', fontSize: 15, fontWeight: 'bold'}}>
+                  Total Income
+                </Text>
+              </View>
+
+              <View>
+                <Text
+                  style={{color: '#F44336', fontSize: 20, fontWeight: 'bold'}}>
+                  ₹6,00,000
+                </Text>
+                <Text
+                  style={{color: 'white', fontSize: 15, fontWeight: 'bold'}}>
+                  Total Expense
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+
         <View style={styles.actionButtons}>
           <TouchableOpacity
             onPress={() => {
               navigation.navigate('AddIncome');
             }}
             style={[styles.incomeButton, styles.fourButtons]}>
-            <Ion name="add-circle-outline" size={35} color="white" />
+            <Ion name="add-circle-outline" size={35} color="black" />
             <Text style={styles.actionText}>Add Income</Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -155,7 +209,7 @@ const App = ({onPressTransactions, onPressTransfer}) => {
               navigation.navigate('AddExpense');
             }}
             style={[styles.expenseButton, styles.fourButtons]}>
-            <Ion name="remove-circle-outline" size={35} color="white" />
+            <Ion name="remove-circle-outline" size={35} color="black" />
             <Text style={styles.actionText}>Add Expense</Text>
           </TouchableOpacity>
         </View>
@@ -166,7 +220,7 @@ const App = ({onPressTransactions, onPressTransfer}) => {
               navigation.navigate('Transactions');
             }}
             style={[styles.transactionsButton, styles.fourButtons]}>
-            <Ion name="list" size={35} color="white" />
+            <Ion name="list" size={35} color="black" />
             <Text style={styles.actionText}>Transactions</Text>
           </TouchableOpacity>
         </View>
@@ -177,7 +231,7 @@ const App = ({onPressTransactions, onPressTransfer}) => {
               flexDirection: 'row',
               justifyContent: 'space-between',
               alignItems: 'center',
-              marginBottom: 10,
+              marginBottom: 30,
             }}>
             <Text style={styles.sectionHeader}>Recent Transactions</Text>
             <TouchableOpacity
@@ -185,7 +239,7 @@ const App = ({onPressTransactions, onPressTransfer}) => {
                 navigation.navigate('Transactions');
               }}
               style={{alignItems: 'flex-end'}}>
-              <Text style={styles.viewMoreText}>View more</Text>
+              <Text style={styles.viewMoreText}>+View more</Text>
             </TouchableOpacity>
           </View>
 
@@ -206,6 +260,8 @@ const App = ({onPressTransactions, onPressTransfer}) => {
                     //backgroundColor: 'red',
                     color: 'gray',
                     fontWeight: 'bold',
+                    maxWidth: 160,
+                    textAlign: 'left',
                   },
                 ]}>
                 {item.subject}
@@ -284,35 +340,40 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.5,
   },
   container: {
-    padding: 2,
+    padding: 5,
     flex: 1,
     height: 500,
-    backgroundColor: '#f5f5f5',
+    //backgroundColor: '#f5f5f5',
+    backgroundColor: '#F6F6F6',
   },
   actionButtons: {
     //borderWidth: 1,
     flexDirection: 'row',
     //justifyContent: 'space-evenly',
-    padding: 6,
+    //padding: 6,
+    padding: 10,
   },
   incomeButton: {
-    backgroundColor: '#4caf50',
+    //backgroundColor: '#4caf50',
+    //backgroundColor: '#CCFFCC',
+    backgroundColor: '#FFFFFF',
     flex: 1,
-    elevation: 2,
-    borderRadius: 15,
+    //elevation: 2,
+    borderRadius: 19,
     alignItems: 'center',
   },
   fourButtons: {
     paddingHorizontal: 15,
-    paddingVertical: 10,
+    paddingVertical: 15,
   },
   expenseButton: {
-    backgroundColor: '#f44336',
+    //backgroundColor: '#f44336',
+    backgroundColor: '#FFCCCC',
     flex: 1,
-    elevation: 2,
+    //elevation: 2,
     marginLeft: 10,
     padding: 15,
-    borderRadius: 15,
+    borderRadius: 19,
     alignItems: 'center',
   },
   transferButton: {
@@ -323,18 +384,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   transactionsButton: {
-    backgroundColor: '#03a9f4',
+    //backgroundColor: '#03a9f4',
+    //backgroundColor: '#CCE5FF',
+    backgroundColor: '#FFFFFF',
     flex: 1,
-    elevation: 2,
+    //elevation: 2,
     //marginLeft: 10,
     padding: 15,
-    borderRadius: 15,
+    borderRadius: 20,
     alignItems: 'center',
   },
   actionText: {
-    color: '#fff',
+    //color: '#fff',
+    color: 'black',
     fontWeight: 'bold',
-    fontSize: 17,
+    fontSize: 16,
   },
   summarySection: {
     margin: 6,

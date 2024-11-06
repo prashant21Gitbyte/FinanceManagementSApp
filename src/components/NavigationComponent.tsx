@@ -31,6 +31,9 @@ export default function App() {
           options={{
             headerTitle: 'CRM Finance',
             headerTitleStyle: {fontWeight: 'bold'},
+            headerStyle: {
+              backgroundColor: '#F6F6F6',
+            },
           }}
           component={Home}
         />
@@ -39,6 +42,9 @@ export default function App() {
           options={{
             headerTitle: 'Add Expense',
             headerTitleStyle: {fontWeight: 'bold'},
+            headerStyle: {
+              backgroundColor: '#F6F6F6',
+            },
           }}
           component={AddExpenseScreen}
         />
@@ -47,6 +53,9 @@ export default function App() {
           options={{
             headerTitle: 'Add Income',
             headerTitleStyle: {fontWeight: 'bold'},
+            headerStyle: {
+              backgroundColor: '#F6F6F6',
+            },
           }}
           component={AddIncomeScreen}
         />

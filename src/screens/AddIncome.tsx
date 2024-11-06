@@ -10,7 +10,7 @@ import {
 import {Picker} from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import {RadioButton} from 'react-native-paper';
-import apiRequest from '../http/apiService';
+import apiRequest from '../http/apiServiceT';
 
 const AddIncomeScreen = () => {
   const [date, setDate] = useState(new Date());
@@ -19,10 +19,6 @@ const AddIncomeScreen = () => {
   const [paymentMethod, setPaymentMethod] = useState('Others');
   const [showTimePicker, setShowTimePicker] = useState(false);
   const [time, setTime] = useState(new Date());
-
-  const [showRecurringDatePicker, setShowRecurringDatePicker] = useState(false); // State to show/hide the recurring date picker
-  const [showReminderModal, setShowReminderModal] = useState(false); // State to show/hide the reminder modal
-  const [reminderFrequency, setReminderFrequency] = useState(''); // State to store the selected reminder frequency
 
   const [amount, setAmount] = useState('');
   const [subject, setSubject] = useState('');
@@ -40,39 +36,25 @@ const AddIncomeScreen = () => {
     setTime(currentTime);
   };
 
-  const onRecurringDateChange = (event, selectedDate) => {
-    const currentDate = selectedDate || recurringDate;
-    setShowRecurringDatePicker(false);
-    setRecurringDate(currentDate);
-    setShowReminderModal(true);
-  };
-
-  const saveReminder = frequency => {
-    setReminderFrequency(frequency);
-    setShowReminderModal(false);
-  };
-
-  const removeReminder = () => {
-    setRecurringDate(null);
-    setReminderFrequency('');
-  };
-
   const handleSave = async () => {
+    // Prepare the payload for the POST request
     const payload = {
       amount: amount,
-      category: category,
       paymentMethod: paymentMethod,
       date: date.toISOString(),
       time: time.toISOString(),
-      recurringDate: recurringDate ? recurringDate.toISOString() : null,
-      reminderFrequency: reminderFrequency,
-      notes: notes,
+      subject: subject,
+      description: description,
     };
 
     try {
-      const response = await apiRequest('/addincome', 'POST', payload);
-      //console.log('..........................................')
-      //console.log('Save response:', response);
+      // Make the POST request using apiRequest helper
+      const response = await apiRequest('/add/addincome', 'POST', payload);
+
+      // Log the response from the API
+      console.log('Income data saved successfully:', response.data);
+
+      // Optionally handle success (e.g., show success message or reset fields)
     } catch (error) {
       console.error('Error saving income:', error.message);
     }
@@ -88,6 +70,7 @@ const AddIncomeScreen = () => {
         onChangeText={setAmount}
         placeholder="In Rupees"
         style={styles.input}
+        keyboardType="numeric"
       />
 
       <Text style={{fontSize: 17, fontWeight: 'bold', color: '#333'}}>
@@ -96,8 +79,9 @@ const AddIncomeScreen = () => {
       <TextInput
         value={subject}
         onChangeText={setSubject}
-        placeholder="Enter subject in 50 characters"
+        placeholder="Enter subject in 30 characters"
         style={styles.input}
+        maxLength={30}
       />
 
       <Text style={{fontSize: 17, fontWeight: 'bold', color: '#333'}}>
@@ -125,77 +109,37 @@ const AddIncomeScreen = () => {
       <Text style={{fontSize: 17, fontWeight: 'bold', color: '#333'}}>
         Date
       </Text>
-      <View style={styles.dateTimeContainer}>
-        <TouchableOpacity onPress={() => setShowDatePicker(true)}>
+      <TouchableOpacity onPress={() => setShowDatePicker(true)}>
+        <View style={styles.dateTimeContainer}>
           <Text>{date.toDateString()}</Text>
-        </TouchableOpacity>
-        {showDatePicker && (
-          <DateTimePicker
-            value={date}
-            mode="date"
-            display="default"
-            onChange={onChange}
-          />
-        )}
-      </View>
+
+          {showDatePicker && (
+            <DateTimePicker
+              value={date}
+              mode="date"
+              display="default"
+              onChange={onChange}
+            />
+          )}
+        </View>
+      </TouchableOpacity>
       <Text style={{fontSize: 17, fontWeight: 'bold', color: '#333'}}>
         Time
       </Text>
-      <View style={styles.dateTimeContainer}>
-        <TouchableOpacity onPress={() => setShowTimePicker(true)}>
+      <TouchableOpacity onPress={() => setShowTimePicker(true)}>
+        <View style={styles.dateTimeContainer}>
           <Text>{time.toLocaleTimeString()}</Text>
-        </TouchableOpacity>
-        {showTimePicker && (
-          <DateTimePicker
-            value={time}
-            mode="time"
-            display="default"
-            onChange={onTimeChange}
-          />
-        )}
-      </View>
 
-      <Modal
-        visible={showReminderModal}
-        transparent={true}
-        animationType="slide">
-        <View style={styles.modalContainer}>
-          <View style={styles.modalContent}>
-            <Text style={{fontSize: 18, fontWeight: 'bold'}}>Set Reminder</Text>
-            <View>
-              <RadioButton.Group
-                onValueChange={value => saveReminder(value)}
-                value={reminderFrequency}>
-                <View style={styles.radioButtonContainer}>
-                  <RadioButton value="Once" />
-                  <Text>Once</Text>
-                </View>
-                <View style={styles.radioButtonContainer}>
-                  <RadioButton value="Daily" />
-                  <Text>Daily</Text>
-                </View>
-                <View style={styles.radioButtonContainer}>
-                  <RadioButton value="Weekly" />
-                  <Text>Weekly</Text>
-                </View>
-                <View style={styles.radioButtonContainer}>
-                  <RadioButton value="Monthly" />
-                  <Text>Monthly</Text>
-                </View>
-                <View style={styles.radioButtonContainer}>
-                  <RadioButton value="Yearly" />
-                  <Text>Yearly</Text>
-                </View>
-              </RadioButton.Group>
-            </View>
-            <TouchableOpacity
-              onPress={() => setShowReminderModal(false)}
-              style={styles.closeButton}>
-              <Text style={{color: 'white'}}>Close</Text>
-            </TouchableOpacity>
-          </View>
+          {showTimePicker && (
+            <DateTimePicker
+              value={time}
+              mode="time"
+              display="default"
+              onChange={onTimeChange}
+            />
+          )}
         </View>
-      </Modal>
+      </TouchableOpacity>
 
       <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
         <Text style={styles.saveButtonText}>SAVE</Text>
@@ -214,6 +158,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    backgroundColor: '#F6F6F6',
     padding: 10,
   },
   input: {

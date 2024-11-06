@@ -1,34 +1,18 @@
 //import axios from 'axios';
 
-const apiRequest = async (
-  endpoint,
-  method,
-  payload = {},
-  config = {},
-  token,
-) => {
+const apiRequest = async (endpoint, method, payload = {}, config = {}) => {
   try {
-    /*
+    console.log(endpoint, method, payload);
     const response = await axios({
       method: method,
       url: endpoint,
-      data: payload, 
+      data: payload,
       ...config,
     });
-    */
-    const response = {
-      method: method,
-      url: endpoint,
-      data: payload,
-      headers: {
-        Authorization: token ? `Bearer ${token}` : undefined,
-        ...config.headers,
-      },
-      ...config,
-    };
+
     console.log(response);
 
-    return response.data;
+    return response;
   } catch (error) {
     console.error('Error response:', error.response.data);
     throw new Error(
