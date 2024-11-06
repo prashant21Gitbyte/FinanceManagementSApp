@@ -37,7 +37,7 @@ export default function App() {
         <Stack.Screen
           name="AddExpense"
           options={{
-            headerTitle: 'CRM Finance',
+            headerTitle: 'Add Expense',
             headerTitleStyle: {fontWeight: 'bold'},
           }}
           component={AddExpenseScreen}
@@ -45,7 +45,7 @@ export default function App() {
         <Stack.Screen
           name="AddIncome"
           options={{
-            headerTitle: 'CRM Finance',
+            headerTitle: 'Add Income',
             headerTitleStyle: {fontWeight: 'bold'},
           }}
           component={AddIncomeScreen}

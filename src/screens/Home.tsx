@@ -198,7 +198,18 @@ const App = ({onPressTransactions, onPressTransfer}) => {
                 </Text>
               </View>
 
-              <Text style={styles.textColor}>{item.category}</Text>
+              <Text
+                style={[
+                  {
+                    alignSelf: 'flex-start',
+                    color: 'black',
+                    //backgroundColor: 'red',
+                    color: 'gray',
+                    fontWeight: 'bold',
+                  },
+                ]}>
+                {item.subject}
+              </Text>
 
               <View style={{alignItems: 'flex-end'}}>
                 <Text style={[styles.amount, styles.textColor]}>
@@ -361,6 +372,7 @@ const styles = StyleSheet.create({
   transaction: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+
     marginBottom: 5,
   },
   amount: {

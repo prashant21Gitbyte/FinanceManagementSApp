@@ -111,24 +111,6 @@ const AddExpenseScreen = () => {
         placeholder="Enter description"
         style={styles.input}
       />
-      <Text style={{fontSize: 17, fontWeight: 'bold', color: '#333'}}>
-        Category
-      </Text>
-
-      <View style={styles.pickerContainer}>
-        <Picker
-          selectedValue={category}
-          onValueChange={(itemValue, itemIndex) => setCategory(itemValue)}
-          style={styles.picker}>
-          <Picker.Item label="Air Tickets" value="Air Tickets" />
-          <Picker.Item label="Entertainment" value="Entertainment" />
-          <Picker.Item label="Taxes" value="Taxes" />
-          <Picker.Item label="Salary" value="Salary" />
-          <Picker.Item label="Bills" value="Bills" />
-          <Picker.Item label="Insurance" value="Insurance" />
-          <Picker.Item label="Others" value="Others" />
-        </Picker>
-      </View>
 
       <Text style={{fontSize: 17, fontWeight: 'bold', color: '#333'}}>
         Payment Method
@@ -138,24 +120,15 @@ const AddExpenseScreen = () => {
           selectedValue={paymentMethod}
           onValueChange={(itemValue, itemIndex) => setPaymentMethod(itemValue)}
           style={styles.picker}>
-          <Picker.Item label="Bank" value="Bank" />
-          <Picker.Item label="Card" value="Card" />
+          <Picker.Item label="Online" value="Online" />
           <Picker.Item label="Cash" value="Cash" />
-          <Picker.Item label="Others" value="Others" />
+
           {/* Add more payment methods here */}
         </Picker>
       </View>
-
       <Text style={{fontSize: 17, fontWeight: 'bold', color: '#333'}}>
-        Notes
+        Date
       </Text>
-
-      <TextInput
-        placeholder="Optional"
-        style={styles.input}
-        value={notes}
-        onChangeText={setNotes}
-      />
       <View style={styles.dateTimeContainer}>
         <TouchableOpacity onPress={() => setShowDatePicker(true)}>
           <Text style={{color: 'black'}}>{date.toDateString()}</Text>
@@ -172,7 +145,9 @@ const AddExpenseScreen = () => {
       {/*<TextInput placeholder="Time" style={styles.input} />*/}
 
       {/*<Text style={styles.label}>Time</Text> */}
-
+      <Text style={{fontSize: 17, fontWeight: 'bold', color: '#333'}}>
+        Time
+      </Text>
       <View style={styles.dateTimeContainer}>
         <TouchableOpacity onPress={() => setShowTimePicker(true)}>
           <Text style={{color: 'black'}}>{date.toLocaleTimeString()}</Text>
@@ -183,33 +158,6 @@ const AddExpenseScreen = () => {
             mode="time"
             display="default"
             onChange={onTimeChange}
-          />
-        )}
-      </View>
-
-      {/* Recurring Date Picker and Reminder Modal */}
-      <Text style={{fontSize: 17, fontWeight: 'bold', color: '#333'}}>
-        Recurring? Set Reminder
-      </Text>
-      <View style={styles.dateTimeContainer}>
-        {recurringDate ? (
-          <>
-            <Text>{`${recurringDate.toDateString()} (${reminderFrequency})`}</Text>
-            <TouchableOpacity onPress={removeReminder}>
-              <Text style={{color: 'red'}}>Remove</Text>
-            </TouchableOpacity>
-          </>
-        ) : (
-          <TouchableOpacity onPress={() => setShowRecurringDatePicker(true)}>
-            <Text>Set Recurring Date</Text>
-          </TouchableOpacity>
-        )}
-        {showRecurringDatePicker && (
-          <DateTimePicker
-            value={recurringDate || new Date()}
-            mode="date"
-            display="default"
-            onChange={onRecurringDateChange}
           />
         )}
       </View>

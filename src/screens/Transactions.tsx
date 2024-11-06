@@ -327,7 +327,7 @@ const TransactionsScreen = ({onPressBack}) => {
           </Text>
         </View>
 
-        <Text style={[styles.cell, , {color: 'black'}]}>{item.category}</Text>
+        <Text style={[styles.cell, , {color: 'black'}]}>{item.subject}</Text>
         {item.transactionType === 'income' ? (
           <>
             <Text style={[styles.cell, styles.transactionText]}>
@@ -410,7 +410,7 @@ const TransactionsScreen = ({onPressBack}) => {
                   <Text style={styles.headerTable}>Date</Text>
                 </View>
                 <View style={styles.cell}>
-                  <Text style={styles.headerTable}>Category</Text>
+                  <Text style={styles.headerTable}>Subject</Text>
                 </View>
                 <View style={styles.cell}>
                   <Text style={styles.headerTable}>Income</Text>

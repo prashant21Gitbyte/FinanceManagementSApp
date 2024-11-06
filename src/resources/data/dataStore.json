@@ -1,25 +1,29 @@
 {
+  
+
+
   "Transactions": [
-    { "id": "1", "date": "2024-08-08", "subject": "Electricity Bill", "description": "Electricity Bill...",  "category": "Air Tickets", "modeOfPayment": "Online", "amount": "10000", "transactionType": "income", "transactionTime": "13:54 IST" },
-    { "id": "2", "date": "2024-11-14", "category": "Air Tickets", "modeOfPayment": "Cash", "amount": "10000", "transactionType": "expense", "transactionTime": "13:54 IST" },
-    { "id": "3", "date": "2024-11-14", "category": "Business", "modeOfPayment": "Online", "amount": "10000", "transactionType": "expense", "transactionTime": "13:54 IST" },
-    { "id": "4", "date": "2024-11-14", "category": "Business", "modeOfPayment": "Cash", "amount": "10000", "transactionType": "income", "transactionTime": "13:54 IST" },
-    { "id": "5", "date": "2024-11-14", "category": "Air Tickets", "modeOfPayment": "Cash", "amount": "10000", "transactionType": "expense", "transactionTime": "13:54 IST" },
-    { "id": "6", "date": "2024-11-14", "category": "Air Tickets", "modeOfPayment": "Online", "amount": "10000", "transactionType": "income", "transactionTime": "13:54 IST" },
-    { "id": "7", "date": "2024-11-14", "category": "Air Tickets", "modeOfPayment": "Online", "amount": "10000", "transactionType": "income", "transactionTime": "13:54 IST" },
-    { "id": "8", "date": "2024-11-12", "category": "Air Tickets", "modeOfPayment": "Online", "amount": "10000", "transactionType": "expense", "transactionTime": "13:54 IST" },
-    { "id": "9", "date": "2024-11-12", "category": "Air Tickets", "modeOfPayment": "Cash", "amount": "10000", "transactionType": "income", "transactionTime": "13:54 IST" },
-    { "id": "10", "date": "2024-11-12", "category": "Air Tickets", "modeOfPayment": "Online", "amount": "10000", "transactionType": "expense", "transactionTime": "13:54 IST" },
-    { "id": "11", "date": "2024-11-12", "category": "Air Tickets", "modeOfPayment": "Cash", "amount": "10000", "transactionType": "income", "transactionTime": "13:54 IST" },
-    { "id": "12", "date": "2024-11-12", "category": "Air Tickets", "modeOfPayment": "Online", "amount": "20000", "transactionType": "income", "transactionTime": "13:54 IST" },
-    { "id": "13", "date": "2024-11-12", "category": "Air Tickets", "modeOfPayment": "Online", "amount": "30000", "transactionType": "income", "transactionTime": "13:54 IST" },
-    { "id": "14", "date": "2024-11-12", "category": "Air Tickets", "modeOfPayment": "Cash", "amount": "5000", "transactionType": "expense", "transactionTime": "13:54 IST" },
-    { "id": "15", "date": "2024-11-12", "category": "Air Tickets", "modeOfPayment": "Online", "amount": "4000", "transactionType": "income", "transactionTime": "13:54 IST" },
-    { "id": "16", "date": "2024-11-12", "category": "Bills", "modeOfPayment": "Online", "amount": "4000", "transactionType": "expense", "transactionTime": "13:54 IST" },
-    { "id": "17", "date": "2024-11-12", "category": "Bills", "modeOfPayment": "Cash", "amount": "2000", "transactionType": "expense", "transactionTime": "13:54 IST" },
-    { "id": "18", "date": "2024-11-12", "category": "Others", "modeOfPayment": "Online", "amount": "20000", "transactionType": "income", "transactionTime": "13:54 IST" },
-    { "id": "19", "date": "2024-11-14", "category": "Business", "modeOfPayment": "Cash", "amount": "14000", "transactionType": "income", "transactionTime": "13:54 IST" }
-  ],
+    { "id": "1", "date": "2024-08-08", "subject": "Electricity Bill Payment", "description": "Paid the electricity bill for the month of August 2024.",  "category": "Air Tickets", "modeOfPayment": "Online", "amount": "10000", "transactionType": "income", "transactionTime": "13:54 IST" },
+    { "id": "2", "date": "2024-11-14", "subject": "Flight Ticket Purchase", "description": "Bought round trip flight tickets for a business trip to New York.", "category": "Air Tickets", "modeOfPayment": "Cash", "amount": "10000", "transactionType": "expense", "transactionTime": "13:54 IST" },
+    { "id": "3", "date": "2024-11-14", "subject": "Marketing Campaign", "description": "Payment made for the marketing services provided in November 2024.", "category": "Business", "modeOfPayment": "Online", "amount": "10000", "transactionType": "expense", "transactionTime": "13:54 IST" },
+    { "id": "4", "date": "2024-11-14", "subject": "Client Payment Received", "description": "Payment from a client for services rendered in October.", "category": "Business", "modeOfPayment": "Cash", "amount": "10000", "transactionType": "income", "transactionTime": "13:54 IST" },
+    { "id": "5", "date": "2024-11-14", "subject": "Conference Registration Fee", "description": "Paid for the annual tech conference registration, including hotel and meals.", "category": "Business", "modeOfPayment": "Cash", "amount": "10000", "transactionType": "expense", "transactionTime": "13:54 IST" },
+    { "id": "6", "date": "2024-11-14", "subject": "Ticket Sale - Online Platform", "description": "Income generated from online sales of event tickets.", "category": "Air Tickets", "modeOfPayment": "Online", "amount": "10000", "transactionType": "income", "transactionTime": "13:54 IST" },
+    { "id": "7", "date": "2024-11-14", "subject": "Ticket Refund Processed", "description": "Refund processed for a customer who canceled their booking.", "category": "Air Tickets", "modeOfPayment": "Online", "amount": "10000", "transactionType": "income", "transactionTime": "13:54 IST" },
+    { "id": "8", "date": "2024-11-12", "subject": "Flight Booking - Business Trip", "description": "Expense for booking a flight for an urgent business meeting in London.", "category": "Air Tickets", "modeOfPayment": "Online", "amount": "10000", "transactionType": "expense", "transactionTime": "13:54 IST" },
+    { "id": "9", "date": "2024-11-12", "subject": "Travel Expense Reimbursement", "description": "Reimbursement from company for travel expenses incurred during last business trip.", "category": "Air Tickets", "modeOfPayment": "Cash", "amount": "10000", "transactionType": "income", "transactionTime": "13:54 IST" },
+    { "id": "10", "date": "2024-11-12", "subject": "Flight Cancellations", "description": "Charges for canceled flight tickets due to scheduling conflicts.", "category": "Air Tickets", "modeOfPayment": "Online", "amount": "10000", "transactionType": "expense", "transactionTime": "13:54 IST" },
+    { "id": "11", "date": "2024-11-12", "subject": "Frequent Flyer Program Points", "description": "Earned points through frequent flyer program for travel to Singapore.", "category": "Air Tickets", "modeOfPayment": "Cash", "amount": "10000", "transactionType": "income", "transactionTime": "13:54 IST" },
+    { "id": "12", "date": "2024-11-12", "subject": "Group Ticket Sale", "description": "Income generated from the sale of group tickets for an upcoming concert.", "category": "Air Tickets", "modeOfPayment": "Online", "amount": "20000", "transactionType": "income", "transactionTime": "13:54 IST" },
+    { "id": "13", "date": "2024-11-12", "subject": "Business Trip Flight Expenses", "description": "Airline tickets purchased for a business trip to Paris, including additional baggage fees.", "category": "Air Tickets", "modeOfPayment": "Online", "amount": "30000", "transactionType": "income", "transactionTime": "13:54 IST" },
+    { "id": "14", "date": "2024-11-12", "subject": "Flight Service Fee", "description": "Additional service fee charged by the airline for flight upgrades.", "category": "Air Tickets", "modeOfPayment": "Cash", "amount": "5000", "transactionType": "expense", "transactionTime": "13:54 IST" },
+    { "id": "15", "date": "2024-11-12", "subject": "Online Ticket Booking", "description": "Revenue generated from customers booking tickets on the website for the upcoming year.", "category": "Air Tickets", "modeOfPayment": "Online", "amount": "4000", "transactionType": "income", "transactionTime": "13:54 IST" },
+    { "id": "16", "date": "2024-11-12", "subject": "Utility Bill Payment", "description": "Paid for electricity and water bills for the office building.", "category": "Bills", "modeOfPayment": "Online", "amount": "4000", "transactionType": "expense", "transactionTime": "13:54 IST" },
+    { "id": "17", "date": "2024-11-12", "subject": "Office Rent Payment", "description": "Paid the monthly office rent to the property management company.", "category": "Bills", "modeOfPayment": "Cash", "amount": "2000", "transactionType": "expense", "transactionTime": "13:54 IST" },
+    { "id": "18", "date": "2024-11-12", "subject": "Revenue from Ads", "description": "Income generated through online advertisement campaigns for the business.", "category": "Others", "modeOfPayment": "Online", "amount": "20000", "transactionType": "income", "transactionTime": "13:54 IST" },
+    { "id": "19", "date": "2024-11-14", "subject": "Payment from Consulting", "description": "Payment received for consulting services provided to a client last month.", "category": "Business", "modeOfPayment": "Cash", "amount": "14000", "transactionType": "income", "transactionTime": "13:54 IST" }
+],
+
   "PaymentMethods": [
     {"id": "1", "mode": "Bank"},
     {"id": "2", "mode": "Card"},
