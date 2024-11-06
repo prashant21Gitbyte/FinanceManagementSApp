@@ -149,7 +149,7 @@ const App = ({onPressTransactions, onPressTransfer}) => {
             //width: '100%',
             margin: 7,
             padding: 20,
-            paddingHorizontal: 25,
+            paddingHorizontal: 20,
 
             borderRadius: 30,
           }}>
