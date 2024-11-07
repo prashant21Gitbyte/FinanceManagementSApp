@@ -4,11 +4,13 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {Button, View, Text} from 'react-native';
+import {Button, View, Text, Image} from 'react-native';
 import Home from '../screens/Home';
 import AddExpenseScreen from '../screens/AddExpense';
 import AddIncomeScreen from '../screens/AddIncome';
 import TransactionsScreen from '../screens/Transactions';
+import LoginScreen from '../screens/LoginScreen';
+import SignUpScreen from '../screens/SignUpScreen';
 
 function DetailsScreen({navigation}) {
   return (
@@ -25,15 +27,50 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
-          name="Home"
+          name="Login"
           options={{
-            headerTitle: 'CRM Finance',
+            headerShown: false,
             headerTitleStyle: {fontWeight: 'bold'},
             headerStyle: {
               backgroundColor: '#F6F6F6',
             },
+          }}
+          component={LoginScreen}
+        />
+
+        <Stack.Screen
+          name="SignUp"
+          options={{
+            headerShown: false,
+            headerTitleStyle: {fontWeight: 'bold'},
+            headerStyle: {
+              backgroundColor: '#F6F6F6',
+            },
+          }}
+          component={SignUpScreen}
+        />
+        <Stack.Screen
+          name="Home"
+          options={{
+            headerTitle: () => (
+              <Image
+                source={require('../resources/assets/images/crmLandingLogo.png')}
+                style={{
+                  width: 150,
+                  height: 30,
+                  resizeMode: 'cover',
+                  marginTop: 10,
+                }}
+              />
+            ),
+            headerTitleStyle: {fontWeight: 'bold'},
+            headerStyle: {
+              backgroundColor: '#F6F6F6',
+              height: 60,
+            },
+            headerLeft: () => null,
           }}
           component={Home}
         />

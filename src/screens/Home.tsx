@@ -13,7 +13,7 @@ import dataStore from '../resources/data/dataStore.json';
 import {useNavigation} from '@react-navigation/native';
 // import { useNavigation } from '@react-navigation/native';
 
-const App = ({onPressTransactions, onPressTransfer}) => {
+const Home = ({onPressTransactions, onPressTransfer}) => {
   const [isAddBtnClicked, setIsAddBtnClicked] = useState(false);
   const navigation = useNavigation();
 
@@ -153,7 +153,9 @@ const App = ({onPressTransactions, onPressTransfer}) => {
 
             borderRadius: 30,
           }}>
-          <Text style={{fontWeight: 'bold', color: 'white'}}>Hi, There!</Text>
+          <Text style={{fontWeight: 'bold', color: 'white'}}>
+            Hi there, Neeraj!
+          </Text>
           <View
             style={
               {
@@ -457,4 +459,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Home;

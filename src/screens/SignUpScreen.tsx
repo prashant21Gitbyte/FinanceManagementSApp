@@ -8,16 +8,16 @@ import {TextInput} from 'react-native';
 import Ion from 'react-native-vector-icons/Ionicons';
 import {Alert} from 'react-native';
 
-const LoginScreen = ({navigation}) => {
+const SignUpScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
 
-  const handleLogin = async () => {
+  const handleSignUp = async () => {
     try {
       const newToken = 'mockAccessToken2';
 
       console.log('login clicked', email, password);
-      navigation.navigate('Home');
     } catch (error) {
       Alert.alert('ERROR', 'Invalid');
 
@@ -26,7 +26,7 @@ const LoginScreen = ({navigation}) => {
   };
 
   const goToSignUp = () => {
-    navigation.navigate('SignUp');
+    navigation.navigate('Login');
   };
 
   return (
@@ -38,6 +38,16 @@ const LoginScreen = ({navigation}) => {
 
       {/*<Ion name="person-circle" size={90} color='black'/>*/}
       {/*<Text style={styles.headStyle}>Welcome Back</Text>*/}
+
+      <View>
+        <TextInput
+          label="Name"
+          value={name}
+          onChangeText={setName}
+          style={styles.input}
+          placeholder="Name"
+        />
+      </View>
 
       <View>
         <TextInput
@@ -58,18 +68,19 @@ const LoginScreen = ({navigation}) => {
           placeholder="Password"
         />
       </View>
+
       <View style={styles.footer}>
-        <Text style={styles.footerText}>Not registered? </Text>
+        <Text style={styles.footerText}>Already registered? </Text>
         <TouchableOpacity onPress={goToSignUp}>
-          <Text style={styles.registerLink}>Register</Text>
+          <Text style={styles.registerLink}>Login</Text>
         </TouchableOpacity>
       </View>
       <Button
         mode="contained"
         buttonColor="#0D89C8"
-        onPress={handleLogin}
+        onPress={handleSignUp}
         style={styles.button}>
-        Login
+        Sign Up
       </Button>
     </View>
   );
@@ -127,4 +138,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default SignUpScreen;
