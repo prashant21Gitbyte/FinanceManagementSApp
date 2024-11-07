@@ -153,8 +153,14 @@ const Home = ({onPressTransactions, onPressTransfer}) => {
 
             borderRadius: 30,
           }}>
-          <Text style={{fontWeight: 'bold', color: 'white'}}>
-            Hi there, Neeraj!
+          <Text
+            style={{
+              fontWeight: 'bold',
+              color: 'white',
+              fontSize: 19,
+              marginBottom: 10,
+            }}>
+            Hi there, Neeraj!👋
           </Text>
           <View
             style={
